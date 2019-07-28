@@ -1,6 +1,6 @@
 # Easy HMM
-A easy HMM program written with Python, including the full codes of training, prediction and decoding.
-Originally written by tostq, this is just a fork which has translated into Python 3 and added some miscellaneous comment.
+An easy HMM program written with Python, including the full codes of training, prediction and decoding.
+Originally written by tostq, this is just a fork which has translated into Python 3 and added some miscellaneous comments.
 
 # Introduction
 - Simple algorithms and models to learn HMMs in pure Python
