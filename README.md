@@ -1,5 +1,6 @@
-# Easy_HMM
+# Easy HMM
 A easy HMM program written with Python, including the full codes of training, prediction and decoding.
+Originally written by tostq, this is just a fork which has translated into Python 3 and added some miscellaneous comment.
 
 # Introduction
 - Simple algorithms and models to learn HMMs in pure Python
@@ -8,12 +9,11 @@ A easy HMM program written with Python, including the full codes of training, pr
 - Three examples: Dice problem, Chinese words segmentation and stock analysis.
 
 # Code list
-- hmm.py: hmm models file
-- DiscreteHMM_test.py, GaussianHMM_test.py: test files
-- Dice_01.py, Wordseg_02.py, Stock_03.py: example files
-- RenMinData.txt_utf8: Chinese words segmentation datas
+- `hmm.py`: hmm models file
+- `DiscreteHMM_test.py`, GaussianHMM_test.py: test files
+- `Dice_01.py`, `Wordseg_02.py`, `Stock_03.py`: example files
+- `RenMinData.txt_utf8`: Chinese words segmentation datas
 
-# 中文说明
-参见个人博客：[http://blog.csdn.net/tostq/article/details/70846702](http://blog.csdn.net/tostq/article/details/70846702 "hmm")
-
-里面具体剖析了HMM模型，这个代码也是上述系列博客的配套代码！
+# 中文說明
+這是分叉自 tostq 大大在 Python 上實作的隱性馬可夫模型（Hidden Markov Model），主要將程式碼改為 Python 3，並加入了一些個人的註解。
+原作者 tostq 大大的部落格：[http://blog.csdn.net/tostq/article/details/70846702](http://blog.csdn.net/tostq/article/details/70846702 "hmm")
