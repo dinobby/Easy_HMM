@@ -1,6 +1,6 @@
-#-*-coding:utf-8
 # By tostq <tostq216@163.com>
-# 博客: blog.csdn.net/tostq
+# blog: blog.csdn.net/tostq
+
 import numpy as np
 import hmm
 from hmmlearn.hmm import MultinomialHMM
@@ -9,8 +9,8 @@ word_N = 0
 
 state_list = {'B':0,'M':1,'E':2,'S':3}
 
-# 获得某词的分词结果
-# 如：（我：S）、（你好：BE）、（恭喜发财：BMME）
+# 獲得某詞的分詞結果
+# 如：（我：S）、（你好：BE）、（恭喜發財：BMME）
 def getList(input_str):
     outpout_str = []
     if len(input_str) == 1:
@@ -26,7 +26,7 @@ def getList(input_str):
     return outpout_str
 
 
-# 预处理词典：RenMinData.txt_utf8
+# 預處理詞典：RenMinData.txt_utf8
 def precess_data():
     ifp = file("RenMinData.txt_utf8")
     line_num = 0
@@ -34,7 +34,7 @@ def precess_data():
     word_ind = 0
     line_seq = []
     state_seq = []
-    # 保存句子的字序列及每个字的状态序列，并完成字典统计
+    # 保存句子的字序列及每個字的狀態序列，並完成字典統計
     for line in ifp:
         line_num += 1
         if line_num % 10000 == 0:
@@ -48,7 +48,7 @@ def precess_data():
         for i in range(len(line)):
             if line[i] == " ":continue
             word_list.append(line[i])
-            # 建立单词表
+            # 建立單詞表
             if not word_dic.has_key(line[i]):
                 word_dic[line[i]] = word_ind
                 word_ind += 1
@@ -67,7 +67,7 @@ def precess_data():
 
     return lines,state_seq,word_dic
 
-# 将句子转换成字典序号序列
+# 將句子轉換成字典序號序列
 def word_trans(wordline, word_dic):
     word_inc = []
     line = wordline.strip()
@@ -81,21 +81,20 @@ X,Z,word_dic = precess_data()
 wordseg_hmm = hmm.DiscreteHMM(4,len(word_dic),5)
 wordseg_hmm.train_batch(X,Z)
 
-print "startprob_prior: ", wordseg_hmm.start_prob
-print "transmit: ", wordseg_hmm.transmat_prob
+print("startprob_prior: ", wordseg_hmm.start_prob)
+print("transmit: ", wordseg_hmm.transmat_prob)
 
-sentence_1 = "我要回家吃饭"
-sentence_2 = "中国人民从此站起来了"
-sentence_3 = "经党中央研究决定"
-sentence_4 = "江主席发表重要讲话"
+sentence_1 = "我要回家吃飯"
+sentence_2 = "中國人民從此站起來了"
+sentence_3 = "經黨中央研究決定"
+sentence_4 = "江主席發表重要講話"
 
 Z_1 = wordseg_hmm.decode(word_trans(sentence_1,word_dic))
 Z_2 = wordseg_hmm.decode(word_trans(sentence_2,word_dic))
 Z_3 = wordseg_hmm.decode(word_trans(sentence_3,word_dic))
 Z_4 = wordseg_hmm.decode(word_trans(sentence_4,word_dic))
 
-print u"我要回家吃饭: ", Z_1
-print u"中国人民从此站起来了: ", Z_2
-print u"经党中央研究决定: ", Z_3
-print u"江主席发表重要讲话: ", Z_4
-
+print("我要回家吃飯: ", Z_1)
+print("中國人民從此站起來了: ", Z_2)
+print("經黨中央研究決定: ", Z_3)
+print("江主席發表重要講話: ", Z_4)
