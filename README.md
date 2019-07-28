@@ -10,7 +10,7 @@ Originally written by tostq, this is just a fork which has translated into Pytho
 
 # Code list
 - `hmm.py`: hmm models file
-- `DiscreteHMM_test.py`, GaussianHMM_test.py: test files
+- `DiscreteHMM_test.py`, `GaussianHMM_test.py`: test files
 - `Dice_01.py`, `Wordseg_02.py`, `Stock_03.py`: example files
 - `RenMinData.txt_utf8`: Chinese words segmentation datas
 
