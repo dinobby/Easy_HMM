@@ -11,8 +11,7 @@ Originally written by tostq, this is just a fork which has translated into Pytho
 # Code list
 - `hmm.py`: hmm models file
 - `DiscreteHMM_test.py`, `GaussianHMM_test.py`: test files
-- `Dice_01.py`, `Wordseg_02.py`, `Stock_03.py`: example files
-- `RenMinData.txt_utf8`: Chinese words segmentation datas
+- `01_Dice.py`, `02_Stock.py`: example files
 
 # 中文說明
 這是分叉自 tostq 大大在 Python 上實作的隱性馬可夫模型（Hidden Markov Model），主要將程式碼改為 Python 3，並加入了一些個人的註解。
