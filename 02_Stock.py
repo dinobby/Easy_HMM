@@ -4,20 +4,18 @@
 
 import datetime
 import numpy as np
+import pandas as pd
 from matplotlib import cm, pyplot as plt
 from matplotlib.dates import YearLocator, MonthLocator
-from matplotlib.finance import quotes_historical_yahoo_ochl
 from hmm import GaussianHMM
 from sklearn.preprocessing import scale
 
 # 導入Yahoo金融資料
-quotes = quotes_historical_yahoo_ochl(
-    "INTC", datetime.date(1995, 1, 1), datetime.date(2012, 1, 6))
+r = pd.read_csv('yahoofinance-SPY-20080101-20180101.csv')
 
-
-dates = np.array([q[0] for q in quotes], dtype=int) # 日期列
-close_v = np.array([q[2] for q in quotes]) # 收盤價
-volume = np.array([q[5] for q in quotes])[1:] # 交易數
+dates = r['Date'].values # 日期列
+close_v = r['Close'].values # 收盤價
+volume = r['Volume'].values[1:] # 交易量
 
 
 # diff：out[n] = a[n+1] - a[n] 得到價格變化，即一階差分
